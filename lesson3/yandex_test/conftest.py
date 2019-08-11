@@ -2,6 +2,7 @@ import pytest
 
 
 def pytest_addoption(parser):
+    """parser add Option"""
     parser.addoption(
         "--url",
         action="store",
@@ -12,4 +13,8 @@ def pytest_addoption(parser):
 
 @pytest.fixture
 def url_param(request):
+    """
+    :param request:
+    :return:
+    """
     return request.config.getoption("--url")
